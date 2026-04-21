@@ -1,0 +1,15 @@
+states = ["no_person", "person_far", "person_near"]
+actions = ["open", "close", "wait"]
+
+policy = {
+    "no_person": "close",
+    "person_far": "wait",
+    "person_near": "open"
+}
+
+def get_action(state):
+    return policy[state]
+
+for state in states:
+    action = get_action(state)
+    print(f"State: {state} -> Action: {action}")
